@@ -23,8 +23,6 @@ h1 {
   /* font-family: 'tradegothiclt-bold', sans-serif; */
   font-family: 'VT323', monospace;
   font-size: 10em;
-  /* color: white; */
-  /* color: #97DA97; */
   min-width: 10em;
   text-align: center;
   white-space: nowrap;
@@ -84,3 +82,28 @@ body {
   to {
     border-right-color: transparent;
   }
+}
+
+@media (min-width: 320px)
+{  h1 {
+    font-size:3em;
+    min-width: 2em;
+  }
+  .line-1 { 
+    font-size: 1em;
+    text-align: initial;
+    padding-left: 2em;
+  }
+} 
+
+@media (min-width: 768px) {
+    h1 {
+      font-size:6em;
+      min-width: 3em;
+  } 
+  .line-1 {
+    font-size: 2em;
+    /* text-align: initial; */
+    padding-left: 5em;
+  }
+} 
