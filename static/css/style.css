@@ -84,26 +84,28 @@ body {
   }
 }
 
-@media (min-width: 320px)
-{  h1 {
-    font-size:2.5em;
+@media (min-width: 320px) {
+  h1 {
+    font-size: 2.5em;
     min-width: 2em;
   }
-  .line-1 { 
+
+  .line-1 {
     font-size: 1em;
     text-align: initial;
     padding-left: 2em;
   }
-} 
+}
 
 @media (min-width: 768px) {
-    h1 {
-      font-size:6em;
-      min-width: 3em;
-  } 
+  h1 {
+    font-size: 6em;
+    min-width: 3em;
+  }
+
   .line-1 {
     font-size: 2em;
     /* text-align: initial; */
     padding-left: 5em;
   }
-} 
+}
