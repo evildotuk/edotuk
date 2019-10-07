@@ -20,8 +20,8 @@ span {
 
 h1 {
   font-family: 'VT323', monospace;
-  font-size: 10em;
-  min-width: 10em;
+  font-size: 12em;
+  min-width: 6em;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
@@ -38,10 +38,10 @@ body {
 
 .line-1 {
   position: relative;
-  top: 2em;
+  top: 1.5em;
   margin: 0 auto;
   border-right: 2px solid rgba(255, 255, 255, .75);
-  font-size: 2.5em;
+  font-size: 5em;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
