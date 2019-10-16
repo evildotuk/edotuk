@@ -70,7 +70,7 @@ body {
 
 @keyframes blinkTextCursor {
   from {
-    border-right-color: 2px solid rgba(255, 255, 255, .75);
+    border-right-color: solid rgba(255, 255, 255, .75);
   }
 
   to {
