@@ -3,8 +3,8 @@
 
 /* Global */
 * {
-  color: #97DA97;
-  text-shadow: 2px 2px 1px #8123E0;
+  color: #97da97;
+  text-shadow: 2px 2px 1px #8123e0;
   text-decoration: none;
 }
 
@@ -14,12 +14,12 @@ html {
 }
 
 span {
-  border-right: 2px solid rgba(255, 255, 255, .75);
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
   animation: blinkTextCursor 500ms;
 }
 
 h1 {
-  font-family: 'VT323', monospace;
+  font-family: "VT323", monospace;
   font-size: 12em;
   min-width: 6em;
   text-align: center;
@@ -28,19 +28,18 @@ h1 {
   text-transform: uppercase;
 }
 
-
 body {
   height: calc(100vh - 8em);
   padding: 4em;
-  font-family: 'VT323', monospace;
-  background-color: #2F2B32;
+  font-family: "VT323", monospace;
+  background-color: #2f2b32;
 }
 
 .line-1 {
   position: relative;
   top: 1.5em;
   margin: 0 auto;
-  border-right: 2px solid rgba(255, 255, 255, .75);
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
   font-size: 5em;
   text-align: center;
   white-space: nowrap;
@@ -49,13 +48,19 @@ body {
 }
 
 .link {
-  color: #FFA9A9;
-  text-shadow: 2px 2px 1px #C01515;
+  color: #ffa9a9;
+  text-shadow: 2px 2px 1px #c01515;
 }
 
+.logo {
+  width: 5%;
+  display: block;
+  margin-top: -3em;
+}
 /* Animation */
 .anim-typewriter {
-  animation: typewriter 8s steps(44) 1s 1 normal both, blinkTextCursor 500ms steps(44) infinite normal;
+  animation: typewriter 8s steps(44) 1s 1 normal both,
+    blinkTextCursor 500ms steps(44) infinite normal;
 }
 
 @keyframes typewriter {
@@ -70,7 +75,7 @@ body {
 
 @keyframes blinkTextCursor {
   from {
-    border-right-color: solid rgba(255, 255, 255, .75);
+    border-right-color: solid rgba(255, 255, 255, 0.75);
   }
 
   to {
