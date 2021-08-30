@@ -3,9 +3,16 @@
 
 /* Global */
 * {
+  margin: 0;
+  padding: 0;
   color: #97da97;
   text-shadow: 2px 2px 1px #8123e0;
   text-decoration: none;
+}
+
+canvas {
+  display: block;
+  position: absolute;
 }
 
 html {
@@ -20,23 +27,36 @@ span {
 
 h1 {
   font-family: "VT323", monospace;
-  font-size: 12em;
-  min-width: 6em;
+  font-size: 10em;
+  min-width: 5em;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-transform: uppercase;
+  margin-top: -0.1em;
+}
+
+.container {
+  position: relative;
+}
+
+.content {
+  position: absolute;
+  padding: 4em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 body {
   height: calc(100vh - 8em);
-  padding: 4em;
   font-family: "VT323", monospace;
-  background-color: #2f2b32;
+  /* background-color: #2f2b32; */
 }
 
 .line-1 {
   position: relative;
+  margin-top: -0.1em;
   top: 1.5em;
   margin: 0 auto;
   border-right: 2px solid rgba(255, 255, 255, 0.75);
@@ -48,14 +68,16 @@ body {
 }
 
 .link {
-  color: #ffa9a9;
+  color: #FF8484;
   text-shadow: 2px 2px 1px #c01515;
 }
 
 .logo {
-  width: 5%;
+  width: 20%;
   display: block;
-  margin-top: -3em;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-top: -3em; */
 }
 /* Animation */
 .anim-typewriter {
