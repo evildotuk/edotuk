@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function (event) {
+document.addEventListener("DOMContentLoaded", () => {
   const dataText = [
     "London.",
     "DevOps.",
@@ -8,30 +8,41 @@ document.addEventListener("DOMContentLoaded", function (event) {
     "Consulting.",
   ];
 
-  function typeWriter(text, i, fnCallback) {
-    if (typeof text != "undefined") {
-      if (i < text.length) {
-        document.querySelector("h1").innerHTML = text.substring(0, i + 1);
+  const h1Element = document.querySelector("h1");
+  const TYPING_SPEED = 150;
+  const PAUSE_AFTER_WORD = 700;
+  const PAUSE_AFTER_CYCLE = 15000;
 
-        setTimeout(function () {
-          typeWriter(text, i + 1, fnCallback);
-        }, 150);
-      } else if (typeof fnCallback == "function") {
-        setTimeout(fnCallback, 700);
+  let isAnimating = false;
+
+  async function typeWriter(text) {
+    if (!h1Element || isAnimating) return;
+
+    isAnimating = true;
+
+    for (let i = 0; i <= text.length; i++) {
+      h1Element.textContent = text.substring(0, i);
+      await sleep(TYPING_SPEED);
+    }
+
+    await sleep(PAUSE_AFTER_WORD);
+    isAnimating = false;
+  }
+
+  function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
+
+  async function startTextAnimation() {
+    while (true) {
+      for (let i = 0; i < dataText.length; i++) {
+        await typeWriter(dataText[i]);
       }
+      await sleep(PAUSE_AFTER_CYCLE);
     }
   }
 
-  function StartTextAnimation(i) {
-    if (typeof dataText[i] == "undefined") {
-      setTimeout(function () {
-        StartTextAnimation(0);
-      }, 15000);
-    }
-    typeWriter(dataText[i], 0, function () {
-      StartTextAnimation(i + 1);
-    });
+  if (h1Element) {
+    startTextAnimation();
   }
-
-  StartTextAnimation(0);
 });
