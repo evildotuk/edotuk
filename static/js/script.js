@@ -69,7 +69,7 @@ if (matrixCanvas) {
     matrixCtx.fillStyle = 'rgba(0, 0, 0, 0.05)';
     matrixCtx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
 
-    matrixCtx.fillStyle = '#FF7777';
+    matrixCtx.fillStyle = '#CC3333';
     matrixCtx.font = matrixFontSize + 'px monospace';
 
     for (let i = 0; i < matrixDrops.length; i++) {
