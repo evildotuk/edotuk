@@ -7,16 +7,21 @@
   <meta name="description"
     content="Managed DevOps services - automating, planning, architecting, ansibilizing and terraforming your infrastructure!" />
   <meta name="author" content="KC <k@e-dot.uk>" />
+  <meta name="keywords" content="DevOps consulting, DevOps engineer, infrastructure as code, Terraform, Ansible, Kubernetes, Docker, Helm, CI/CD, SRE, backend engineering, cloud architecture, London, e-dot.uk">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://e-dot.uk/">
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta name="theme-color" content="#000000">
   <meta itemprop="image" content="https://e-dot.uk/static/files/social.jpg" />
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="e-dot.uk - Professional DevOps Consulting Services." />
   <meta name="twitter:description"
     content="Managed DevOps services - automating, planning, architecting, ansibilizing and terraforming your infrastructure!" />
-  <meta name="twitter:site"
-    content="Managed DevOps services - automating, planning, architecting, ansibilizing and terraforming your infrastructure!" />
+  <meta name="twitter:site" content="@evilr00t" />
   <meta name="twitter:creator" content="@evilr00t" />
   <meta name="twitter:image:src" content="https://e-dot.uk/static/files/social.jpg" />
   <!-- Open Graph general (Facebook, Pinterest & Google+) -->
@@ -24,21 +29,23 @@
   <meta name="og:description"
     content="Managed DevOps services - automating, planning, architecting, ansibilizing and terraforming your infrastructure!" />
   <meta name="og:image" content="https://e-dot.uk/static/files/social.jpg" />
+  <meta name="og:image:width" content="1200" />
+  <meta name="og:image:height" content="630" />
   <meta name="og:url" content="https://e-dot.uk" />
   <meta name="og:site_name" content="e-dot.uk - Professional DevOps Consulting Services." />
   <meta name="og:locale" content="en_GB" />
   <meta name="og:type" content="website" />
   <meta name="HandheldFriendly" content="true" />
   <link rel="shortcut icon" href="static/files/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="static/files/favicon.ico">
   <link rel="stylesheet" href="static/css/style.css" />
 </head>
 
 <body>
   <div class="container">
-  <canvas id="c"></canvas>
+  <canvas id="c" aria-hidden="true"></canvas>
   <div class="content">
     <img src="static/files/logo.png" alt="EvilDOT DevOps Services" class="logo" />
-    <!-- Where the magic happens! -->
     <h1></h1>
     <p class="line-1 anim-typewriter">
       Contact me at:
@@ -47,60 +54,10 @@
   </div>
   </div>
   <script src="static/js/script.js"></script>
-  <script>
-    // geting canvas by Boujjou Achraf
-    var c = document.getElementById("c");
-    var ctx = c.getContext("2d");
-
-    //making the canvas full screen
-    c.height = window.innerHeight;
-    c.width = window.innerWidth;
-
-    var matrix = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
-    //converting the string into an array of single characters
-    matrix = matrix.split("");
-
-    var font_size = 10;
-    var columns = c.width/font_size; //number of columns for the rain
-    //an array of drops - one per column
-    var drops = [];
-    //x below is the x coordinate
-    //1 = y co-ordinate of the drop(same for every drop initially)
-    for(var x = 0; x < columns; x++)
-        drops[x] = 1; 
-
-    //drawing the characters
-    function draw()
-    {
-        //Black BG for the canvas
-        //translucent BG to show trail
-        ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-        ctx.fillRect(0, 0, c.width, c.height);
-
-        ctx.fillStyle = "#FF7777";// text colour
-        ctx.font = font_size/13 + "em monospace";
-        //looping over drops
-        for(var i = 0; i < drops.length; i++)
-        {
-            //a random chinese character to print
-            var text = matrix[Math.floor(Math.random()*matrix.length)];
-            //x = i*font_size, y = value of drops[i]*font_size
-            ctx.fillText(text, i*font_size, drops[i]*font_size);
-
-            //sending the drop back to the top randomly after it has crossed the screen
-            //adding a randomness to the reset to make the drops scattered on the Y axis
-            if(drops[i]*font_size > c.height && Math.random() > 0.975)
-                drops[i] = 0;
-
-            //incrementing Y coordinate
-            drops[i]++;
-        }
-    }
-
-    setInterval(draw, 33);
-
-  </script>
-  <!-- And here magic goes away -->
+  <noscript>
+    <style>.content { position: static; padding: 4em; }</style>
+    <p style="font-family:monospace;color:#97da97;text-align:center;padding:2em;">Please enable JavaScript to view this site.</p>
+  </noscript>
 </body>
 
 </html>
