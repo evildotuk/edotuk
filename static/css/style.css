@@ -95,17 +95,11 @@ a {
   letter-spacing: -0.02em;
 }
 
-.brand-mark {
-  display: grid;
-  width: 30px;
-  height: 30px;
-  border: 1px solid rgba(255, 116, 120, 0.45);
-  border-radius: 9px;
-  color: var(--accent);
-  background: var(--accent-soft);
-  font-family: "DM Mono", monospace;
-  font-size: 15px;
-  place-items: center;
+.brand-logo {
+  display: block;
+  width: 22px;
+  height: 21px;
+  object-fit: contain;
 }
 
 .header-link {
@@ -294,10 +288,13 @@ h1 {
 .logo {
   position: relative;
   display: block;
-  width: min(100%, 340px);
+  width: min(88%, 320px);
   height: auto;
-  margin: -8px auto 18px;
-  filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.3));
+  margin: 0 auto 26px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.34);
+  object-fit: cover;
 }
 
 .card-copy {
