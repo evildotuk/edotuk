@@ -102,6 +102,10 @@ a {
   object-fit: contain;
 }
 
+.domain-dot {
+  color: var(--accent);
+}
+
 .header-link {
   color: var(--muted);
   font-size: 14px;
