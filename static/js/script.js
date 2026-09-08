@@ -80,7 +80,16 @@ const sleep = (duration) =>
   new Promise((resolve) => window.setTimeout(resolve, duration));
 
 async function rotatePhrases() {
-  if (!rotatingWord || reduceMotion) return;
+  if (!rotatingWord) return;
+
+  if (reduceMotion) {
+    let phraseIndex = 0;
+    window.setInterval(() => {
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      rotatingWord.textContent = phrases[phraseIndex];
+    }, 3000);
+    return;
+  }
 
   for (let phraseIndex = 0; ; phraseIndex += 1) {
     const phrase = phrases[phraseIndex % phrases.length];
