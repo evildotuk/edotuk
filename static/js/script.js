@@ -1,142 +1,106 @@
-// ============================================================================
-// SECTION 1: MATRIX RAIN BACKGROUND EFFECT
-// ============================================================================
+const canvas = document.getElementById("c");
+const reduceMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+).matches;
 
-const devOpsCode = [
-  'terraform apply',
-  'terraform init',
-  'terraform plan',
-  'ansible-playbook site.yml',
-  'kubectl get pods',
-  'kubectl apply -f deployment.yaml',
-  'docker build -t app .',
-  'docker-compose up -d',
-  'git push origin main',
-  'git pull --rebase',
-  'helm upgrade --install',
-  'helm repo update',
-  'aws ec2 describe-instances',
-  'gcloud container clusters get-credentials',
-  'az aks get-credentials',
-  'systemctl restart nginx',
-  'journalctl -fu service',
-  'prometheus --config.file=prometheus.yml',
-  'grafana-server',
-  'vault secrets enable pki',
-  'consul agent -dev',
-  'packer build template.pkr.hcl',
-  'pulumi up',
-  'argocd app sync',
-  'flux reconcile source git',
-  'DevOps',
-  'Infrastructure as Code',
-  'CI/CD',
-  'SRE',
-  'Observability',
-  'e-dot.uk',
+const platformCode = [
+  "define service level objectives",
+  "reduce toil",
+  "kubectl get pods",
+  "measure error budget",
+  "improve developer experience",
+  "build golden paths",
+  "observability",
+  "platform as a product",
+  "incident response",
+  "e-dot.uk",
 ];
 
-const matrixCanvas = document.getElementById('c');
+if (canvas && !reduceMotion) {
+  const context = canvas.getContext("2d");
+  const fontSize = 14;
+  let drops = [];
+  let animationFrame;
+  let lastFrame = 0;
 
-if (matrixCanvas) {
-  const matrixCtx = matrixCanvas.getContext('2d');
-  const matrixFontSize = 14;
-
-  let matrixColumns;
-  let matrixDrops;
-
-  function resizeMatrixCanvas() {
-    const width = window.innerWidth;
-    const height = Math.max(
-      window.innerHeight,
-      document.documentElement.scrollHeight,
-      document.body.scrollHeight
+  function resizeCanvas() {
+    const ratio = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = window.innerWidth * ratio;
+    canvas.height = window.innerHeight * ratio;
+    context.setTransform(ratio, 0, 0, ratio, 0, 0);
+    drops = Array.from(
+      { length: Math.ceil(window.innerWidth / fontSize) },
+      () => Math.random() * -80,
     );
-    if (matrixCanvas.width !== width || matrixCanvas.height !== height) {
-      matrixCanvas.width = width;
-      matrixCanvas.height = height;
-    }
-    matrixColumns = Math.floor(matrixCanvas.width / matrixFontSize);
-    matrixDrops = [];
-    for (let i = 0; i < matrixColumns; i++) {
-      matrixDrops[i] = Math.random() * -100;
-    }
   }
 
-  resizeMatrixCanvas();
+  function drawMatrix(timestamp) {
+    animationFrame = window.requestAnimationFrame(drawMatrix);
+    if (timestamp - lastFrame < 65) return;
+    lastFrame = timestamp;
 
-  function drawMatrix() {
-    matrixCtx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-    matrixCtx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
+    context.fillStyle = "rgba(8, 11, 16, 0.12)";
+    context.fillRect(0, 0, window.innerWidth, window.innerHeight);
+    context.fillStyle = "#ff7478";
+    context.font = `${fontSize}px "DM Mono", monospace`;
 
-    matrixCtx.fillStyle = '#CC3333';
-    matrixCtx.font = matrixFontSize + 'px monospace';
-
-    for (let i = 0; i < matrixDrops.length; i++) {
-      const text = devOpsCode[Math.floor(Math.random() * devOpsCode.length)];
-      matrixCtx.fillText(text, i * matrixFontSize, matrixDrops[i] * matrixFontSize);
-
-      if (matrixDrops[i] * matrixFontSize > matrixCanvas.height && Math.random() > 0.975) {
-        matrixDrops[i] = 0;
-      }
-
-      matrixDrops[i]++;
-    }
+    drops.forEach((drop, index) => {
+      const text =
+        platformCode[Math.floor(Math.random() * platformCode.length)];
+      context.fillText(text, index * fontSize, drop * fontSize);
+      drops[index] =
+        drop * fontSize > window.innerHeight && Math.random() > 0.98
+          ? 0
+          : drop + 1;
+    });
   }
 
-  setInterval(drawMatrix, 50);
-  window.addEventListener('resize', resizeMatrixCanvas);
+  resizeCanvas();
+  animationFrame = window.requestAnimationFrame(drawMatrix);
+
+  window.addEventListener("resize", resizeCanvas, { passive: true });
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      window.cancelAnimationFrame(animationFrame);
+    } else {
+      animationFrame = window.requestAnimationFrame(drawMatrix);
+    }
+  });
 }
 
-// ============================================================================
-// SECTION 2: TYPEWRITER ANIMATION
-// ============================================================================
+const rotatingWord = document.getElementById("rotating-word");
+const phrases = [
+  "reliable systems",
+  "scalable platforms",
+  "useful golden paths",
+  "calm on-call rotations",
+];
 
-document.addEventListener("DOMContentLoaded", () => {
-  const dataText = [
-    "London.",
-    "DevOps.",
-    "Backend.",
-    "Architecting.",
-    "Planning.",
-    "Consulting.",
-  ];
+const sleep = (duration) =>
+  new Promise((resolve) => window.setTimeout(resolve, duration));
 
-  const h1Element = document.querySelector("h1");
-  const TYPING_SPEED = 150;
-  const PAUSE_AFTER_WORD = 700;
-  const PAUSE_AFTER_CYCLE = 15000;
+async function rotatePhrases() {
+  if (!rotatingWord || reduceMotion) return;
 
-  let isAnimating = false;
+  for (let phraseIndex = 0; ; phraseIndex += 1) {
+    const phrase = phrases[phraseIndex % phrases.length];
+    rotatingWord.textContent = "";
 
-  async function typeWriter(text) {
-    if (!h1Element || isAnimating) return;
-
-    isAnimating = true;
-
-    for (let i = 0; i <= text.length; i++) {
-      h1Element.textContent = text.substring(0, i);
-      await sleep(TYPING_SPEED);
+    for (const character of phrase) {
+      rotatingWord.textContent += character;
+      await sleep(55);
     }
 
-    await sleep(PAUSE_AFTER_WORD);
-    isAnimating = false;
-  }
+    await sleep(1800);
 
-  function sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
-
-  async function startTextAnimation() {
-    while (true) {
-      for (let i = 0; i < dataText.length; i++) {
-        await typeWriter(dataText[i]);
-      }
-      await sleep(PAUSE_AFTER_CYCLE);
+    while (rotatingWord.textContent.length > 0) {
+      rotatingWord.textContent = rotatingWord.textContent.slice(0, -1);
+      await sleep(28);
     }
   }
+}
 
-  if (h1Element) {
-    startTextAnimation();
-  }
-});
+const year = document.getElementById("year");
+if (year) year.textContent = new Date().getFullYear();
+
+rotatePhrases();

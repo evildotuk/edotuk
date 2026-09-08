@@ -2,62 +2,194 @@
 <html lang="en">
 
 <head>
-  <title>e-dot.uk - Professional DevOps Consulting Services.</title>
+  <title>SRE &amp; Platform Engineering Consultant | e-dot.uk</title>
   <meta charset="UTF-8" />
   <meta name="description"
-    content="Managed DevOps services - automating, planning, architecting, ansibilizing and terraforming your infrastructure!" />
+    content="Independent SRE and platform engineering consultancy helping teams build reliable systems, scalable platforms, and better developer experiences." />
   <meta name="author" content="KC <k@e-dot.uk>" />
-  <meta name="keywords" content="DevOps consulting, DevOps engineer, infrastructure as code, Terraform, Ansible, Kubernetes, Docker, Helm, CI/CD, SRE, backend engineering, cloud architecture, London, e-dot.uk">
+  <meta name="keywords" content="SRE consultant, site reliability engineering, platform engineering consultant, internal developer platform, developer experience, observability, Kubernetes, London, e-dot.uk">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
   <link rel="canonical" href="https://e-dot.uk/">
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <meta name="theme-color" content="#000000">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#080b10">
   <meta itemprop="image" content="https://e-dot.uk/static/files/social.jpg" />
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="e-dot.uk - Professional DevOps Consulting Services." />
+  <meta name="twitter:title" content="SRE &amp; Platform Engineering Consultant | e-dot.uk" />
   <meta name="twitter:description"
-    content="Managed DevOps services - automating, planning, architecting, ansibilizing and terraforming your infrastructure!" />
+    content="Reliable systems, scalable platforms, and better developer experiences." />
   <meta name="twitter:site" content="@evilr00t" />
   <meta name="twitter:creator" content="@evilr00t" />
-  <meta name="twitter:image:src" content="https://e-dot.uk/static/files/social.jpg" />
-  <!-- Open Graph general (Facebook, Pinterest & Google+) -->
-  <meta name="og:title" content="e-dot.uk - Professional DevOps Consulting Services." />
-  <meta name="og:description"
-    content="Managed DevOps services - automating, planning, architecting, ansibilizing and terraforming your infrastructure!" />
-  <meta name="og:image" content="https://e-dot.uk/static/files/social.jpg" />
-  <meta name="og:image:width" content="1200" />
-  <meta name="og:image:height" content="630" />
-  <meta name="og:url" content="https://e-dot.uk" />
-  <meta name="og:site_name" content="e-dot.uk - Professional DevOps Consulting Services." />
-  <meta name="og:locale" content="en_GB" />
-  <meta name="og:type" content="website" />
+  <meta name="twitter:image" content="https://e-dot.uk/static/files/social.jpg" />
+  <meta name="twitter:image:alt" content="Developer working from a laptop" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="SRE &amp; Platform Engineering Consultant | e-dot.uk" />
+  <meta property="og:description"
+    content="Reliable systems, scalable platforms, and better developer experiences." />
+  <meta property="og:image" content="https://e-dot.uk/static/files/social.jpg" />
+  <meta property="og:image:secure_url" content="https://e-dot.uk/static/files/social.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="2048" />
+  <meta property="og:image:height" content="1034" />
+  <meta property="og:image:alt" content="Developer working from a laptop" />
+  <meta property="og:url" content="https://e-dot.uk/" />
+  <meta property="og:site_name" content="e-dot.uk" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:type" content="website" />
   <meta name="HandheldFriendly" content="true" />
   <link rel="shortcut icon" href="static/files/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="static/files/favicon.ico">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "e-dot.uk",
+      "url": "https://e-dot.uk/",
+      "image": "https://e-dot.uk/static/files/social.jpg",
+      "email": "mailto:k@e-dot.uk",
+      "description": "Independent SRE and platform engineering consultancy helping teams build reliable systems, scalable platforms, and better developer experiences.",
+      "areaServed": "Worldwide",
+      "serviceType": [
+        "Site Reliability Engineering",
+        "Platform Engineering",
+        "Internal Developer Platforms",
+        "Observability"
+      ]
+    }
+  </script>
   <link rel="stylesheet" href="static/css/style.css" />
 </head>
 
 <body>
-  <div class="container">
   <canvas id="c" aria-hidden="true"></canvas>
-  <div class="content">
-    <img src="static/files/logo.png" alt="EvilDOT DevOps Services" class="logo" />
-    <h1></h1>
-    <p class="line-1 anim-typewriter">
-      Contact me at:
-      <a href="mailto:k@e-dot.uk?subject=I%20would%20like%20to%20hire%20you!" class="link">k@e-dot.uk</a>
-    </p>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="e-dot.uk home">
+        <span class="brand-mark">e.</span>
+        <span>e-dot.uk</span>
+      </a>
+      <a class="header-link" href="mailto:k@e-dot.uk?subject=SRE%20and%20platform%20engineering%20enquiry">
+        Start a project <span aria-hidden="true">↗</span>
+      </a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> Available for select projects</p>
+        <h1 id="hero-title">Reliable platforms.<br><span class="accent">Confident teams.</span></h1>
+        <p class="intro">
+          Independent SRE and platform engineering consultancy helping teams build
+          reliable systems, scalable platforms, and better developer experiences.
+        </p>
+
+        <div class="specialisms" aria-label="Specialisms">
+          <span>Site reliability engineering</span>
+          <span>Platform engineering</span>
+          <span>Internal developer platforms</span>
+          <span>Observability</span>
+        </div>
+
+        <div class="actions">
+          <a class="button button-primary" href="mailto:k@e-dot.uk?subject=SRE%20and%20platform%20engineering%20enquiry">
+            Let’s work together <span aria-hidden="true">→</span>
+          </a>
+          <a class="button button-secondary" href="static/files/CV.pdf">View credentials</a>
+        </div>
+      </div>
+
+      <aside class="profile-card" aria-label="Consultant profile">
+        <div class="card-glow"></div>
+        <img src="static/files/logo.png" alt="e-dot.uk platform engineering mascot" class="logo" width="1200" height="840" />
+        <div class="card-copy">
+          <span class="card-label">Currently engineering</span>
+          <p class="rotating-text"><span class="prompt">~/</span> <span id="rotating-word">reliable systems</span><span class="cursor" aria-hidden="true"></span></p>
+        </div>
+        <div class="card-footer">
+          <span>London, UK</span>
+          <span>Remote worldwide</span>
+        </div>
+      </aside>
+      </section>
+
+      <section class="impact" aria-labelledby="impact-title">
+        <div class="section-heading">
+          <p class="section-kicker">Selected impact</p>
+          <h2 id="impact-title">Production experience,<br><span class="muted-heading">measurable outcomes.</span></h2>
+          <p>Platform engineering grounded in reliability, developer enablement, security, and sustainable cloud economics.</p>
+        </div>
+
+        <dl class="metrics" aria-label="Career highlights">
+          <div>
+            <dt>400+</dt>
+            <dd>applications migrated from ECS to EKS</dd>
+          </div>
+          <div>
+            <dt>$60k</dt>
+            <dd>annual cloud waste eliminated</dd>
+          </div>
+          <div>
+            <dt>~60%</dt>
+            <dd>CI compute cost reduction</dd>
+          </div>
+          <div>
+            <dt>7.5h</dt>
+            <dd>production standby failover</dd>
+          </div>
+        </dl>
+
+        <div class="experience-list">
+          <article class="experience-card">
+            <div class="experience-meta">
+              <span class="company">Enterprise SaaS</span>
+              <span>Site reliability engineering</span>
+            </div>
+            <h3>Modernising reliability at scale</h3>
+            <p>Migrated 400+ applications from ECS to EKS, consolidated orchestration onto Airflow and Argo Workflows, and led company-wide disaster recovery testing.</p>
+            <ul class="tech-list" aria-label="Enterprise SaaS focus areas">
+              <li>AWS EKS</li><li>Argo</li><li>Airflow</li><li>Thanos</li><li>SecOps</li>
+            </ul>
+          </article>
+
+          <article class="experience-card">
+            <div class="experience-meta">
+              <span class="company">Transaction platform</span>
+              <span>Cloud and platform engineering</span>
+            </div>
+            <h3>Building resilient GCP foundations</h3>
+            <p>Re-architected a core C# platform from EC2 to production GKE, cut build times from 25 to 7–9 minutes, and maintained zero cluster- or configuration-related downtime.</p>
+            <ul class="tech-list" aria-label="Transaction platform focus areas">
+              <li>GCP</li><li>GKE</li><li>GitHub Actions</li><li>FinOps</li><li>PCI-DSS</li>
+            </ul>
+          </article>
+
+          <article class="experience-card">
+            <div class="experience-meta">
+              <span class="company">Health-tech startup</span>
+              <span>Platform engineering</span>
+            </div>
+            <h3>Taking a startup from zero to production</h3>
+            <p>Designed a highly available AWS platform from scratch, with modular Terraform, isolated environments, automated delivery, and security guardrails built in.</p>
+            <ul class="tech-list" aria-label="Health-tech platform focus areas">
+              <li>AWS</li><li>Terraform</li><li>GitHub Actions</li><li>IAM</li><li>Observability</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span id="year"></span> e-dot.uk</span>
+      <a href="mailto:k@e-dot.uk">k@e-dot.uk</a>
+    </footer>
   </div>
-  </div>
+
   <script src="static/js/script.js"></script>
-  <noscript>
-    <style>.content { position: static; padding: 4em; }</style>
-    <p style="font-family:monospace;color:#97da97;text-align:center;padding:2em;">Please enable JavaScript to view this site.</p>
-  </noscript>
+  <noscript><p class="noscript">JavaScript is disabled. Everything important still works.</p></noscript>
 </body>
 
 </html>
